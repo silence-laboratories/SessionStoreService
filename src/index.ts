@@ -7,12 +7,11 @@ import helmet from 'helmet';
 import { AppDataSource } from './database';
 import { authMiddleware } from './middleware/auth';
 import { SessionController } from './controllers/session';
-// very top of database.ts or wherever is earliest
 dotenv.config();
 
 
 const app = express();
-const port = process.env.PORT || 3008;
+const PORT = parseInt(process.env.PORT || '3008', 10);
 const sessionController = new SessionController();
 /// <reference path="./types/express.d.ts" />
 // Middleware
@@ -45,6 +44,6 @@ app.use((err: Error, req: express.Request, res: express.Response, next: express.
   res.status(500).json({ error: 'Internal server error' });
 });
 
-app.listen(port, () => {
-  console.log(`🚀 Session store running on port ${port}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
 });

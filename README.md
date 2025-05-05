@@ -1,10 +1,10 @@
-# Session-Store API (backend)
+# Session-Store-Service
 
 Tiny REST service used by the ElizaOSMpcSessions demo:
 
 * **POST /api/session** &nbsp;— store the session-info JSON uploaded by the
-  front-end.  
-* **GET  /api/session** &nbsp;— return that JSON to the Eliza-OS agent.  
+  client side.  
+* **GET  /api/session** &nbsp;— ElizaOs will fetch the sessionInfo from session-store service.  
 * **GET  /api/health** &nbsp;— liveness probe.
 
 Powered by **Express + TypeORM**.  
@@ -22,7 +22,7 @@ Runs with **SQLite by default**
 
 ---
 
-## Local dev
+## Local dev setup
 
 ```bash
 # 1. deps
@@ -35,17 +35,11 @@ cp .env.example .env            # keep DATABASE_TYPE=sqlite
 npm run dev
 
 ```
-The database file test.db appears in the repo root.
-
 
 ## Docker setup
 
 ```bash
-# 1. build
-docker build -t session-store:sqlite .
 
-# 2. run
-
-docker run -p 3008:3008 --name session-store-demo session-store:sqlite
+docker compose -f docker-compose-local.yml up --build
 
 ```
