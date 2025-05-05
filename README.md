@@ -22,7 +22,7 @@ Runs with **SQLite by default**
 
 ---
 
-## Local dev  (⚡ SQLite)
+## Local dev
 
 ```bash
 # 1. deps
@@ -38,7 +38,7 @@ npm run dev
 The database file test.db appears in the repo root.
 
 
-## Docker - Single-image(⚡ SQLite)
+## Docker setup
 
 ```bash
 # 1. build
