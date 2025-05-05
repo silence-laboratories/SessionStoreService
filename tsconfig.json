@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "rootDir": "src",
+    "outDir": "dist",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strict": true,
+    "typeRoots": ["./node_modules/@types"],
+    "skipLibCheck": true,
+    "esModuleInterop": true
+  },
+
+  // 👇  goes here, not above
+  "include": ["src/**/*", "src/global.d.ts"]
+}
