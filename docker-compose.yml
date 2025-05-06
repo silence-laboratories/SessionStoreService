@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  session-store:
+    build: .
+    ports:
+      - "3008:3008"
+    environment:
+      - PORT=3008
+      - DATABASE_TYPE=sqlite
+      - DATABASE_PATH=./session.sqlite
+    networks:
+      - session-network
+
+
+volumes:
+  session-store-data:
+
+networks:
+  session-network:

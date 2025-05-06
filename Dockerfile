@@ -22,6 +22,7 @@ RUN npm ci --omit=dev
 
 COPY --from=build /app/dist ./dist
 COPY .env.example .env
+COPY src src
 
 EXPOSE 3008
 CMD ["node", "dist/index.js"]
